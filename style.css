@@ -1,41 +1,97 @@
-/* Reset e configurações básicas */
+/* Importa fonte */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global */
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
+  background-color: #121212;
+  color: #f1f1f1;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-/* Containers */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Seção de apresentação */
-#presentation {
-  background: linear-gradient(135deg, #001f3f, #003366);
+/* Cabeçalho fixo com menu responsivo */
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #0077cc;
+}
+
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  background: #fff;
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
   color: #fff;
-  padding: 60px 0;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #0077cc;
+}
+
+/* Apresentação */
+#presentation {
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+  padding: 80px 0;
   text-align: center;
 }
 
 #presentation h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 10px;
+  animation: fadeIn 1s ease forwards;
 }
 
 #presentation p {
-  font-size: 1.1rem;
   max-width: 800px;
   margin: 20px auto;
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
 .cta-group {
@@ -45,84 +101,97 @@ body {
 .cta {
   display: inline-block;
   padding: 12px 24px;
-  margin: 8px;
+  margin: 10px;
   font-size: 1rem;
   background-color: #0077cc;
   color: white;
   border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta:hover {
   background-color: #005fa3;
+  transform: scale(1.05);
 }
 
-/* Títulos de seção */
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 50px;
-  color: #003366;
-}
-
-/* Portfólio */
+/* Seção de portfólio */
 #portfolio {
   padding: 60px 0;
-  background-color: #ffffff;
+  background-color: #181818;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #0077cc;
 }
 
 .project-item {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 60px;
-  background-color: #f1f3f5;
+  background-color: #1f1f1f;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 60px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
-.project-info, .project-img {
+.project-info,
+.project-img {
   flex: 1 1 500px;
   padding: 30px;
 }
 
 .project-info h1 {
-  font-size: 1.8rem;
-  color: #003366;
+  font-size: 1.6rem;
+  color: #fff;
   margin-bottom: 10px;
 }
 
 .project-info h2 {
   font-size: 1.2rem;
-  color: #0077cc;
+  color: #66ccff;
   margin-bottom: 15px;
 }
 
-.project-info p {
-  margin-bottom: 15px;
+.project-info p,
+.project-info ul {
+  color: #ccc;
   font-size: 1rem;
-  color: #343a40;
 }
 
 .project-info ul {
   padding-left: 20px;
-  margin-bottom: 15px;
 }
 
 .project-info ul li {
-  list-style-type: disc;
   margin-bottom: 8px;
-  font-size: 0.95rem;
 }
 
 .project-img img {
   width: 100%;
   height: auto;
   border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.project-img img:hover {
+  transform: scale(1.02);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsivo */
@@ -131,12 +200,22 @@ body {
     flex-direction: column;
   }
 
-  .project-info, .project-img {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #1f1f1f;
+    position: absolute;
+    top: 70px;
+    right: 20px;
     padding: 20px;
+    border-radius: 8px;
   }
 
-  .cta {
-    width: 100%;
-    max-width: 300px;
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
   }
 }
