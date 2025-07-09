@@ -1,376 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SPX Advisory - Consultoria estratégica em segurança viária" />
-  <title>SPX Advisory</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #121212;
-      color: #f1f1f1;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Cabeçalho */
-    header {
-      background-color: #1f1f1f;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      color: #0077cc;
-    }
-
-    .nav-toggle {
-      display: none;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      background: #fff;
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px 0;
-      transition: 0.3s ease;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-menu a {
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .nav-menu a:hover {
-      color: #0077cc;
-    }
-
-    /* Apresentação */
-    #presentation {
-      background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    #presentation h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    #presentation p {
-      max-width: 800px;
-      margin: 20px auto;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    .cta-group {
-      margin-top: 30px;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      font-size: 1rem;
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .cta:hover {
-      background-color: #005fa3;
-      transform: scale(1.05);
-    }
-
-    /* Portfólio */
-    #portfolio {
-      padding: 60px 0;
-      background-color: #181818;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 50px;
-      color: #0077cc;
-    }
-
-    .project-item {
-      display: flex;
-      flex-wrap: wrap;
-      background-color: #1f1f1f;
-      border-radius: 12px;
-      margin-bottom: 60px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      animation: fadeInUp 0.6s ease-in-out;
-    }
-
-    .project-info,
-    .project-img {
-      flex: 1 1 500px;
-      padding: 30px;
-    }
-
-    .project-info h1 {
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .project-info h2 {
-      font-size: 1.2rem;
-      color: #66ccff;
-      margin-bottom: 15px;
-    }
-
-    .project-info p,
-    .project-info ul {
-      color: #ccc;
-      font-size: 1rem;
-    }
-
-    .project-info ul {
-      padding-left: 20px;
-    }
-
-    .project-info ul li {
-      margin-bottom: 8px;
-    }
-
-    .project-img img {
-      width: 100%;
-      height: auto;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .project-img img:hover {
-      transform: scale(1.02);
-    }
-
-    /* Animações */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-      .project-item {
-        flex-direction: column;
-      }
-
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        background: #1f1f1f;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        padding: 20px;
-        border-radius: 8px;
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
+  <title>SPX Advisory - Segurança Viária Estratégica</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
   <header>
     <h1>SPX Advisory</h1>
-    <div class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav class="nav-menu">
-      <a href="#presentation">Início</a>
-      <a href="#portfolio">Portfólio</a>
-    </nav>
+    <p>Conectando Segurança Viária à Performance do Seu Negócio</p>
   </header>
 
-  <section id="presentation">
-    <div class="presentation container">
-      <h1>Olá,</h1>
-      <h1>Seja bem-vindo à SPX Advisory</h1>
-      <h1>Segurança Viária como Valor Estratégico</h1>
-      <p>
-        A SPX Advisory é uma consultoria estratégica especializada em transformar dados, comportamento humano e gestão
-        em resultados reais. Atuamos como parceiros de decisão para empresas que buscam mais segurança, eficiência e
-        sustentabilidade.
-      </p>
-      <div class="cta-group">
-        <a href="#portfolio" class="cta">Experiências e Habilidades</a>
-        <a href="https://www.linkedin.com/in/sperax/" target="_blank" rel="noopener noreferrer" class="cta">LinkedIn</a>
-        <a href="https://github.com/jeansperandio" target="_blank" rel="noopener noreferrer" class="cta">GitHub</a>
-        <a href="#" class="cta">Updates Coming Soon</a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#fundador">Fundador</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre a SPX Advisory</h2>
+    <div class="highlight">
+      A SPX Advisory transforma segurança viária em valor estratégico. A SPX Advisory é uma consultoria estratégica especializada em transformar dados, comportamento humano e gestão em resultados reais. Atuamos como parceiros de decisão para empresas que buscam mais segurança, eficiência e sustentabilidade nos seus processos.</div>
+    <p>
+      Mais do que evitar acidentes, promovemos performance sustentável com base em dados, cultura e estratégias alinhadas às normas mais exigentes do mercado.
+    </p>
+  </section>
+
+  <section id="solucoes">
+    <h2>Nossas Soluções</h2>
+    <div class="solutions">
+      <div class="solution-card">
+        <h3>Safety Process</h3>
+        <p>Modelagem e otimização de processos de segurança com base em dados reais. 
+Realizamos uma análise minuciosa dos processos de segurança viária a partir de dados operacionais coletados em campo. Utilizamos metodologias de gestão por dimensão e boas práticas de governança para mapear vulnerabilidades, identificar oportunidades de melhoria e estruturar intervenções eficazes, aplicáveis no dia a dia.
+</p>
+            <h4>Características do negócio:</h4>
+            <ul>
+            <li>Possui telemetria, sensores, checklists ou auditorias internas, mas não transforma dados em ações consistentes;</li>
+            <li>Apresenta gaps entre áreas operacionais e estratégicas na tomada de decisão;</li>
+            <li>Busca implementar gestão por indicadores reais, com foco em eficiência e prevenção;</li>
+            <li>Tem operações repetitivas e precisa padronizar boas práticas em segurança.</li>
+            </ul>
+      </div>
+      <div class="solution-card">
+        <h3>Risk Management</h3>
+        <p>Gestão de riscos com foco em desempenho, prevenção e conformidade
+Apoiamos sua empresa na identificação, análise e mitigação de riscos críticos relacionados à segurança operacional. Atuamos com ferramentas de gestão baseadas em dados e conhecimento técnico para reduzir a exposição a eventos adversos, aumentar a previsibilidade e garantir conformidade com normas e padrões regulatórios (ex: ISO 39001)
+</p>
+            <h4>Características do negócio:</h4>
+            <ul>
+            <li>Precisa reduzir a exposição a riscos operacionais e reputacionais;</li>
+            <li>Enfrenta custos com acidentes, seguros, passivos jurídicos ou fiscais;</li>
+            <li>Tem demanda de conformidade com normas (ex: ISO 9001, ISO 31001, ISO 39001)</li>
+            <li>Deseja implementar modelos preventivos e proativos de gestão de risco com base em dados.</li>
+            </ul>
+      </div>
+      <div class="solution-card">
+        <h3>Diagnostics</h3>
+        <p>Diagnóstico situacional com foco em governança e segurança operacional
+Conduzimos avaliações aprofundadas dos processos que impactam a segurança e a tomada de decisão no seu negócio. Nosso diagnóstico situacional oferece uma fotografia precisa dos fatores de risco, permitindo intervenções alinhadas aos objetivos estratégicos e à realidade da operação.
+</p>
+            <h4>Características do negócio:</h4>
+            <ul>
+            <li>Ainda não possui um programa estruturado de segurança;</li>
+            <li>Quer entender quais áreas impactam diretamente os resultados em segurança e risco;</li>
+            <li>Precisa de um retrato fiel e imparcial do cenário atual, com sugestões práticas de melhoria;</li>
+            <li>Deseja estruturar planos de ação baseados em evidências, e priorizar investimentos com base em risco.</li>
+            </ul>
+      </div>
+      <div class="solution-card">
+        <h2>Diferenciais da SPX Advisory</h2>
+        <p>Conformidade com normas como ISO 39001.</p>
+            <ul>
+            <li>Atuação independente e imparcial</li>
+            <li>Metodologia própria baseada em dados e contexto operacional</li>
+            <li>Experiência prática consolidada no setor de transportes e logística</li>
+            <li>Integração entre análise técnica e comportamento humano</li>
+            <li>Soluções aplicáveis e sustentáveis, com impacto real no negócio</li>
+            </ul>
       </div>
     </div>
   </section>
 
-  <section id="portfolio">
-    <div class="portfolio container">
-      <h1 class="section-title">Sell Book</h1>
-
-      <div class="project-item">
-        <div class="project-info">
-          <h1>Safety System</h1>
-          <h2>Visão sistêmica da segurança no desempenho empresarial</h2>
-          <p>Oferecemos uma abordagem integrada da segurança viária como componente essencial para gerar valor.</p>
-          <ul>
-            <li>Governança como diferencial estratégico</li>
-            <li>Unificação de diretrizes entre áreas</li>
-            <li>Alinhamento com KPIs, compliance e ESG</li>
-            <li>Mudança cultural estruturada</li>
-          </ul>
-        </div>
-        <div class="project-img">
-          <img src="./rio.jpg" alt="Imagem de sistema viário" />
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-info">
-          <h1>Safety Process</h1>
-          <h2>Modelagem e otimização de processos baseados em dados</h2>
-          <p>Análise de processos de segurança a partir de dados reais coletados em campo.</p>
-          <ul>
-            <li>Transformação de dados em ações práticas</li>
-            <li>Gaps entre áreas operacionais e estratégicas</li>
-            <li>Gestão por indicadores reais</li>
-            <li>Padronização de práticas seguras</li>
-          </ul>
-        </div>
-        <div class="project-img">
-          <img src="barra.jpg" alt="Imagem de logística urbana" />
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-info">
-          <h1>Risk Management</h1>
-          <h2>Gestão de riscos com foco em prevenção e desempenho</h2>
-          <p>Identificação e mitigação de riscos com base em dados e ferramentas técnicas.</p>
-          <ul>
-            <li>Redução de riscos operacionais</li>
-            <li>Menor custo com acidentes e passivos</li>
-            <li>Conformidade com normas (ISO, ANTT)</li>
-            <li>Modelos de prevenção e previsibilidade</li>
-          </ul>
-        </div>
-        <div class="project-img">
-          <img src="skills.png" alt="Imagem de habilidades e conformidade" />
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-info">
-          <h1>Diagnostics</h1>
-          <h2>Diagnóstico situacional com foco em governança</h2>
-          <p>Retrato preciso dos fatores que afetam segurança e tomada de decisão.</p>
-          <ul>
-            <li>Mapeamento de riscos reais</li>
-            <li>Priorizações baseadas em evidências</li>
-            <li>Reestruturações, fusões ou novos programas</li>
-          </ul>
-        </div>
-        <div class="project-img">
-          <img src="book.jpg" alt="Imagem de diagnóstico com livro de dados" />
-        </div>
-      </div>
-
-      <div class="project-item" id="contact">
-        <div class="project-info">
-          <h1>Contatos</h1>
-          <h2>Fale comigo</h2>
-          <p>Email: <a href="mailto:sperax@gmail.com">sperax@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/sperax/" target="_blank">LinkedIn</a></p>
-          <p><a href="https://github.com/jeansperandio" target="_blank">GitHub</a></p>
-        </div>
-        <div class="project-img">
-          <img src="mail.jpg" alt="Imagem representando email e comunicação" />
-        </div>
-      </div>
-
-    </div>
+  <section id="fundador">
+    <h2>Sobre o Fundador</h2>
+    <p>
+      Jean Carlos Sperandio Xavier é especialista em segurança viária e fundador da SPX Advisory. Com ampla experiência no setor de transporte, lidera a transformação da segurança em valor estratégico para grandes operações.
+    </p>
   </section>
 
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
+  <section class="cta" id="contato">
+    <h2>Entre em Contato</h2>
+    <p>Vamos transformar juntos a segurança da sua operação.</p>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <textarea name="message" rows="4" placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="form-status"></div>
+  </section>
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
+  <footer>
+    © 2025 SPX Advisory · contatojeansperandio@gmail.com
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
-
 </html>
