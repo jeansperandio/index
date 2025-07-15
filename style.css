@@ -130,4 +130,56 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* button */
+  .custom-btn.btn-3 {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  perspective: 230px;
+}
+
+.custom-btn.btn-3 span {
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+              7px 7px 20px 0px rgba(0,0,0,.1),
+              4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  text-align: center;
+  transition: all .3s;
+  box-sizing: border-box;
+}
+
+.custom-btn.btn-3 span:nth-child(1) {
+  box-shadow: -7px -7px 20px 0px #fff9,
+              -4px -4px 5px 0px #fff9,
+              7px 7px 20px 0px #0002,
+              4px 4px 5px 0px #0001;
+  transform: rotateX(90deg);
+  transform-origin: 50% 50% -20px;
+}
+
+.custom-btn.btn-3 span:nth-child(2) {
+  transform: rotateX(0deg);
+  transform-origin: 50% 50% -20px;
+}
+
+.custom-btn.btn-3:hover span:nth-child(1) {
+  transform: rotateX(0deg);
+}
+
+.custom-btn.btn-3:hover span:nth-child(2) {
+  color: transparent;
+  transform: rotateX(-90deg);
+}
+
 }
