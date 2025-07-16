@@ -33,7 +33,7 @@ body::before {
 header {
   background: #005a9e;
   color: white;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   animation: fadeIn 2s ease-in;
   width: 100%;
